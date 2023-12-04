@@ -5,18 +5,13 @@ lines = f.read().splitlines()
 from math import pow
 s = 0
 i=0
-while(i < len(lines)):
-    line = lines[i]
-    i+=1
-    
-    id, nb = line.split(":")
-    _, id = id.split()
-    id = int(id)-1
+for line in lines:    
+    _, nb = line.split(":")
     win, player = nb.split("|")
     win = set(win.split())
     player = set(player.split())
 
     matches = win.intersection(player)
-    for k in range(1, len(matches)+1):
-        lines.append(lines[id+k])
-print(len(lines))
+    if len(matches) != 0:
+        s+=2**(len(matches)-1)
+print(s)
