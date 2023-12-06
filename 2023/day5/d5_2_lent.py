@@ -47,9 +47,9 @@ for step_id, step in enumerate(steps):
     for filter_id, filter in enumerate(step):
         print(f"begin step {step_id} ({filter_id+1}/{len(step)} filters)",end="\r")
         mask[filter.dest_begin:filter.dest_end+1] = map[filter.src_begin:filter.src_end+1]
-        map[filter.src_begin:filter.src_end+1] = False
+        # map[filter.src_begin:filter.src_end+1] = False
     print(f"\nbegin merge of step {step_id}")
-    map = np.logical_or(map, mask)
+    map = np.logical_xor(map, mask)
 
 for i, location in enumerate(map):
     if location: 
