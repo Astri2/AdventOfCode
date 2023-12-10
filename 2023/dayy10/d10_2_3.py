@@ -1,6 +1,3 @@
-import sys
-
-sys.setrecursionlimit(10000)
 with open("dayy10/expanded.txt",'r') as f:
     map = [[[c] for c in list(line)] for line in f.read().splitlines()]
 
