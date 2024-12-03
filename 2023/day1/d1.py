@@ -17,4 +17,4 @@ for line in lines:
     s += int(c1+c2)
 print(s)
 
-# print(sum([[(int("".join([c if c.isnumeric() else map[c] for c in [digits[0], digits[-1]]]))) for digits in [re.findall(p, line)]][0] for re in [__import__("re")] for part1 in [True] for test in [False] for p in [r"(?=([0-9]|zero|one|two|three|four|five|six|seven|eight|nine))" if part1 else r"[0-9]"] for f in [open(f"day1/input{('_test1' if part1 else '_test2') if test else ''}.txt")] for map in [{"one":"1","two":"2","three":"3","four":"4","five":"5","six":"6","seven":"7","eight":"8", "nine":"9"}] for line in f.read().splitlines()]))
+print(sum([[(int("".join([c if c.isnumeric() else map[c] for c in [digits[0], digits[-1]]]))) for digits in [re.findall(p, line)]][0] for re in [__import__("re")] for part1 in [True] for test in [False] for p in [r"(?=([0-9]|zero|one|two|three|four|five|six|seven|eight|nine))" if part1 else r"[0-9]"] for f in [open(f"day1/input{('_test1' if part1 else '_test2') if test else ''}.txt")] for map in [{"one":"1","two":"2","three":"3","four":"4","five":"5","six":"6","seven":"7","eight":"8", "nine":"9"}] for line in f.read().splitlines()]))
