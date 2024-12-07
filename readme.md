@@ -7,8 +7,8 @@
 | Day 3 |    ✅    | ⭐⭐ |  7min  | 10min (+3min) |
 | Day 4 |    ✅    | ⭐⭐ | 29min | 33min (+4min) |
 | Day 5 |    ✅    | ⭐⭐ | 43min | 51min (+8min) |
-| Day 6 |    ✅    | ⭐⭐ | 28min |   2h (+1h32)   |
-| Day 7 |   ✖️   | ➖➖ |   ➖   |       ➖       |
+| Day 6 |    ✅    | ⭐⭐ | 28min | 2h (+1h32min) |
+| Day 7 |    ✅    | ⭐⭐ | 17min | 47min (+30min) |
 | Day 8 |   ✖️   | ➖➖ |   ➖   |       ➖       |
 | Day 9 |   ✖️   | ➖➖ |   ➖   |       ➖       |
 | Day 10 |   ✖️   | ➖➖ |   ➖   |       ➖       |
