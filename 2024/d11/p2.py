@@ -4,9 +4,8 @@
 
 # 65601038650482: too low
 
-TEST = True
+TEST = False
 import os
-from linkedlist import *
 from collections import defaultdict
 from math import log10, pow
 with open(f"2024/{os.path.split(os.path.split(__file__)[0])[1]}/input{"_test" if TEST else ""}.txt") as f:

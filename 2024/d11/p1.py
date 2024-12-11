@@ -1,24 +1,36 @@
 # 9h01->9h50
 
-TEST = False
+TEST = True
 import os
-from linkedlist import *
 from math import log10, pow
 with open(f"2024/{os.path.split(os.path.split(__file__)[0])[1]}/input{"_test" if TEST else ""}.txt") as f:
     lines = f.read().splitlines()
 
 
-stones: LinkedList = LinkedList()
-for s in lines[0].split()[::-1]:
-    stones.insertAtBegin(int(s))
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
 
-n=75
+size = 0
+head = None
+node = None
+for s in lines[0].split()[::-1]:
+    size+=1
+    if node == None:
+        head = Node(int(s))
+        node = head
+    else:
+        next_node = Node(int(s))
+        node.next = next_node
+        node = next_node
+        
+n=25
 m=0
 for i in range(n):
     print(f"{i+1}/{n}",end="")
-    # stones.printLL()
     
-    node: Node = stones.head
+    node: Node = head
     while(node != None):
         m = max(m, node.data)
         if node.data == 0:
@@ -29,14 +41,12 @@ for i in range(n):
             node.data = node.data//div
             new_node.next = node.next
             node.next = new_node
-            stones.size+=1
+            size+=1
             
-            # i+=1
             node = node.next
         else:
             node.data = node.data*2024
-        # i+=1
         node = node.next
-    print("->" + str(stones.size), "max:", m, end="\r")
+    print("->" + str(size), end="\r")
 print()
-print(stones.size)
+print(size)
