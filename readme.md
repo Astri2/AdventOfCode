@@ -7,15 +7,15 @@
 | Day 3 |    ✅    | ⭐⭐ |  7min  | 10min (+3min) |
 | Day 4 |    ✅    | ⭐⭐ | 29min | 33min (+4min) |
 | Day 5 |    ✅    | ⭐⭐ | 43min | 51min (+8min) |
-| Day 6 |    ✅    | ⭐⭐ | 28min | 2h (+1h32min) |
+| Day 6 |    ✅    | ⭐⭐ | 28min |  2h (+92min)  |
 | Day 7 |    ✅    | ⭐⭐ | 17min | 47min (+30min) |
 | Day 8 |    ✅    | ⭐⭐ | 27min | 52min (+25min) |
 | Day 9 |    ✅    | ⭐⭐ | 25min | 55min (+30min) |
-| Day 10 |    ✅    | ⭐⭐ | 20min |  24min (+4min)  |
-| Day 11 |    ✅    | ⭐⭐ |   25min   | 70min (+45min) |
-| Day 12 |   ✖️   | ➖➖ |   ➖   |       ➖       |
-| Day 13 |   ✖️   | ➖➖ |   ➖   |       ➖       |
-| Day 14 |   ✖️   | ➖➖ |   ➖   |       ➖       |
+| Day 10 |    ✅    | ⭐⭐ | 20min | 24min (+4min) |
+| Day 11 |    ✅    | ⭐⭐ | 25min | 70min (+45min) |
+| Day 12 |    ✅    | ⭐⭐ | 10min | 1h20 (+70min) |
+| Day 13 |    ✅    | ⭐⭐ | 21min | 36min (+15min) |
+| Day 14 |    ✅    | ⭐⭐ | 28min | 51min (+23min) |
 | Day 15 |   ✖️   | ➖➖ |   ➖   |       ➖       |
 | Day 16 |   ✖️   | ➖➖ |   ➖   |       ➖       |
 | Day 17 |   ✖️   | ➖➖ |   ➖   |       ➖       |
