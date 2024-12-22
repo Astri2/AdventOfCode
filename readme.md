@@ -17,7 +17,7 @@
 | Day 13 |    ✅   | ⭐⭐ | 21min  | 36min (+15min)   |
 | Day 14 |    ✅   | ⭐⭐ | 28min  | 51min (+23min)   |
 | Day 15 |    ✅   | ⭐⭐ | 23min  | 1h37min (+74min) |
-| Day 16 |    ✅   | ⭐➖ |  ➖    |        ➖       |
+| Day 16 |    ✅   | ⭐➖ |  1h    |        ➖       |
 | Day 17 |    ✅   | ⭐➖ | 23min  |       ➖         |
 | Day 18 |    ✅   | ⭐⭐ | 17min  | 22min (+5min)    |
 | Day 19 |    ✅   | ⭐⭐ | 12min  | 22min (+10min)   |
