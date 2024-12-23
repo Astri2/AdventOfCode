@@ -21,7 +21,7 @@ def find_start_end():
 
 i_s, j_s, i_e, j_e = find_start_end()
 
-
+# path setup
 to_visit = [(i_s, j_s)]
 visited = set()
 dist = 0
@@ -56,30 +56,42 @@ def disp():
     
 
 shortcuts = defaultdict(int)
+dist_cap = 20
 for i in range(len(map)):
     for j in range(len(map[0])):
         c = map[i][j]
         # wall or unset
         if c == "#" or c == 10000: continue
         
-        if i >= 2:
-            c2 = map[i-2][j]
-            if c2 != "#" and c2 != 10000 and c < c2:
-                shortcuts[abs(c2-c)-2]+=1
-        if j >= 2:
-            c2 = map[i][j-2]
-            if c2 != "#" and c2 != 10000 and c < c2:
-                shortcuts[abs(c2-c)-2]+=1
+        for i_ in range(max(0,i-dist_cap), min(len(map), i+dist_cap+1)):
+            for j_ in range(max(0, j-dist_cap), min(len(map[0]), j+dist_cap+1)):
                 
-        if i < len(map)-2:
-            c2 = map[i+2][j]
-            if c2 != "#" and c2 != 10000 and c < c2:
-                shortcuts[abs(c2-c)-2]+=1
+                # distance L1
+                if abs(i-i_)+abs(j-j_) > dist_cap: continue
                 
-        if j < len(map[0])-2:
-            c2 = map[i][j+2]
-            if c2 != "#" and c2 != 10000 and c < c2:
-                shortcuts[abs(c2-c)-2]+=1
+                c2 = map[i_][j_]
+                if c2 == "#" or c2 == 10000 or c >= c2: continue
+                
+                shortcuts[c2-c-abs(i_-i)-abs(j_-j)]+=1
+        
+        # if i >= 2:
+        #     c2 = map[i-2][j]
+        #     if c2 != "#" and c2 != 10000 and c < c2:
+        #         shortcuts[abs(c2-c)-2]+=1
+        # if j >= 2:
+        #     c2 = map[i][j-2]
+        #     if c2 != "#" and c2 != 10000 and c < c2:
+        #         shortcuts[abs(c2-c)-2]+=1
+                
+        # if i < len(map)-2:
+        #     c2 = map[i+2][j]
+        #     if c2 != "#" and c2 != 10000 and c < c2:
+        #         shortcuts[abs(c2-c)-2]+=1
+                
+        # if j < len(map[0])-2:
+        #     c2 = map[i][j+2]
+        #     if c2 != "#" and c2 != 10000 and c < c2:
+        #         shortcuts[abs(c2-c)-2]+=1
 
 # div by 2 bc it's 2 ways
 cap = 64 if TEST else 100

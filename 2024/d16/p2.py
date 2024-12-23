@@ -1,5 +1,7 @@
 TEST = False
 from heapq import heappop, heappush
+from collections import deque
+import os
 def dijkstra(graph, weight, source=0, target=None):
     """single source shortest paths by Dijkstra
 
@@ -31,11 +33,11 @@ def dijkstra(graph, weight, source=0, target=None):
                 dist_neighbor = dist_node + weight[node][i]
                 if dist_neighbor < dist[neighbor]:
                     dist[neighbor] = dist_neighbor
-                    prec[neighbor] = node
+                    prec[neighbor] = [node]
                     heappush(heap, (dist_neighbor, neighbor))
+                if dist_neighbor == dist[neighbor] and not node in prec[neighbor]: prec[neighbor].append(node)
     return dist, prec
 
-import os
 with open(f"2024/{os.path.split(os.path.split(__file__)[0])[1]}/input{"_test" if TEST else ""}.txt") as f:
     lines = f.read().splitlines()
 
@@ -156,13 +158,48 @@ for i in range(1, N-1):
             if not corner or (i,j-1) == (e_i, e_j):
                 add_node(idx, pos_to_idx(i,j-1), 1)
 
-# print(G)
-# print(W)
 
-dist, path = dijkstra(G, W, pos_to_idx(s_i, s_j), pos_to_idx(e_i, e_j))
+dist, path = dijkstra(G, W, pos_to_idx(s_i, s_j))
 print(dist[pos_to_idx(e_i, e_j)])
 
-# Pour la P2 : 
-# - retirer les entrants de S
-# - retirer les sortant de E
-# - calculers tous les plus courts chemins, BFS?
+def disp():
+    for i in range(len(map)):
+        for j in range(len(map[0])):
+            if map[i][j] == "#": print("     #", end=" ")
+            elif dist[pos_to_idx(i,j)] == None: print("   inf", end= " ")
+            else: print(f"{dist[pos_to_idx(i,j)]:-6}", end=" ")
+        print()        
+
+
+disp()
+
+def get_gap(idx1, idx2):
+    if idx1 > idx2: 
+        idx1, idx2 = idx2, idx1
+        
+    if abs(idx1-idx2) == 2 or abs(idx1-idx2) == 30: return (idx1+idx2)//2
+    
+    i1, j1 = idx1//N, idx1%N
+    _, j2 = idx2//N, idx2%N
+    
+    if j1 < j2:
+        return pos_to_idx(i1+1,j1) if map[i1+1][j1] != "#" else pos_to_idx(i1,j1+1)
+    else: return pos_to_idx(i1+1,j1) if map[i1+1][j1] != "#" else pos_to_idx(i1,j1-1)
+
+
+
+to_visit = deque()
+to_visit.append(pos_to_idx(e_i,e_j))
+seen = set()
+seen.add(pos_to_idx(e_i,e_j))
+while to_visit:
+    idx = to_visit.pop()
+    if path[idx] == None: continue
+    for idx_ in path[idx]:
+        if idx_ in seen: continue
+        seen.add(idx_)
+        
+        if abs(dist[idx] - dist[idx_] != 1):
+            seen.add(get_gap(idx, idx_))
+        to_visit.append(idx_)
+print(len(seen))

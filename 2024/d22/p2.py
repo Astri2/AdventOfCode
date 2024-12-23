@@ -1,6 +1,6 @@
 TEST = False
 import os
-from itertools import product
+from collections import defaultdict
 from functools import lru_cache
 with open(f"2024/{os.path.split(os.path.split(__file__)[0])[1]}/input{"_test" if TEST else ""}.txt") as f:
     lines = f.read().splitlines()
@@ -35,21 +35,34 @@ for line in lines:
         deltas[-1][i+1] = bananas[-1][i+1] - bananas[-1][i]
         secret = s
 
-gen = product(range(-9,10), repeat=4)
-res = 0
-best_seq = None
-for i,seq in enumerate(gen):
-    print(f"\r{i}/{130321}", end="")
-    r = 0
-    for b, d in zip(bananas, deltas):
-        for i in range(len(b)):
-            if d[i] == seq[0] and i < len(b)-3:
-                if d[i+1] == seq[1] and d[i+2] == seq[2] and d[i+3] == seq[3]:
-                    r += b[i+3]
-                    break
-    if r > res:
-        best_seq = seq
-        res = r
-        
+
+sequences_to_bananas = defaultdict(int)
+for i, (b, d) in enumerate(zip(bananas, deltas)):
+    # print(f"\r{idx}/{len(bananas)}", end="")
+    seen_seq = set()
+    for i in range(3, len(b)):
+        seq = (d[i-3],d[i-2],d[i-1],d[i])
+        if seq in seen_seq : continue
+        seen_seq.add(seq)
+        sequences_to_bananas[seq]+= b[i]
+
 print()
-print(res, best_seq)
+print(max(sequences_to_bananas.values()))
+# gen = product(range(-9,10), repeat=4)
+# res = 0
+# best_seq = None
+# for i,seq in enumerate(gen):
+#     print(f"\r{i}/{130321}", end="")
+#     r = 0
+#     for b, d in zip(bananas, deltas):
+#         for i in range(len(b)):
+#             if d[i] == seq[0] and i < len(b)-3:
+#                 if d[i+1] == seq[1] and d[i+2] == seq[2] and d[i+3] == seq[3]:
+#                     r += b[i+3]
+#                     break
+#     if r > res:
+#         best_seq = seq
+#         res = r
+        
+# print()
+# print(res, best_seq)
