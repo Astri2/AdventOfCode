@@ -17,12 +17,13 @@
 | Day 13 |    ✅   | ⭐⭐ | 21min  | 36min (+15min)   |
 | Day 14 |    ✅   | ⭐⭐ | 28min  | 51min (+23min)   |
 | Day 15 |    ✅   | ⭐⭐ | 23min  | 1h37min (+74min) |
-| Day 16 |    ✅   | ⭐⭐ |  1h    | 2h (+70min)      |
-| Day 17 |    ✅   | ⭐➖ | 23min  |                  |
+| Day 16 |    ✅   | ⭐⭐ | 1h     | 2h (+70min)      |
+| Day 17 |    ✅   | ⭐➖ | 23min  |        ➖        |
 | Day 18 |    ✅   | ⭐⭐ | 17min  | 22min (+5min)    |
 | Day 19 |    ✅   | ⭐⭐ | 12min  | 22min (+10min)   |
 | Day 20 |    ✅   | ⭐⭐ | 26min  | 34min (+8min)    |
-| Day 21 |    ✅   | ➖➖ |  ➖    |       ➖        |
-| Day 22 |    ✅   | ⭐⭐ |  7min  | 40min (+33min)   |
-| Day 23 |    ✅   | ⭐⭐ |  13min | 53min (+40min)   |
-| Day 24 |    ✖️   | ➖➖ |  ➖    |       ➖        |
+| Day 21 |    ✅   | ➖➖ |   ➖   |       ➖        |
+| Day 22 |    ✅   | ⭐⭐ | 7min   | 40min (+33min)   |
+| Day 23 |    ✅   | ⭐⭐ | 13min  | 53min (+40min)   |
+| Day 24 |    ✅   | ⭐➖ | 30min  |        ➖        |
+| Day 25 |    ✅   | ⭐➖ | 8min   |        ➖        |
